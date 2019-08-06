@@ -89,19 +89,16 @@ for nnz_ix=1:length(nnz_pct_arr)
         PRED = filter_FP(dim,pen_u,pen_v,nord,reg);
         cd(['../results/compare_' num2str(nnz_pct)]);
         save(['PRED_FP_' num2str(i) '.mat'],'PRED');
-        save(['STORE_FP_' num2str(i) '.mat'],'STORE');
         cd(home);
         
         PRED = filter_FT(dim,tol_u,pen_v,nord,reg);
         cd(['../results/compare_' num2str(nnz_pct)]);
         save(['PRED_FT_' num2str(i) '.mat'],'PRED');
-        save(['STORE_FT_' num2str(i) '.mat'],'STORE');
         cd(home);
         
         PRED = filter_ZT(dim,pen_v,nord,reg);
         cd(['../results/compare_' num2str(nnz_pct)]);
         save(['PRED_LN_' num2str(i) '.mat'],'PRED');
-        save(['STORE_LN_' num2str(i) '.mat'],'STORE');
         cd(home);
     
         disp(['Done processing: ' num2str(nnz_pct) ' | ' num2str(i)]);
